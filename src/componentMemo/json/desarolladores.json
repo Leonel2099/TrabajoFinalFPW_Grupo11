@@ -1,0 +1,44 @@
+[
+    {
+      "name": "Nelson Ariel Sagrero",
+      "img": "https://avatars.githubusercontent.com/u/93611545?v=4",
+      "gitname": "Arielsagrero",
+      "descripcion":"Hola soy Ariel, tengo 38 años curso la Tecnicatura en Desarrollo Integral de Videojuegos, soy de Perico – Jujuy –  Argentina. Junto a mi compañero Leo nos asignaron la realizacion de la funcion principal",
+      "link":"https://github.com/arielsagrero"
+    },
+    {
+      "name": "Facundo Jose Luis Brajeda",
+      "img": "https://avatars.githubusercontent.com/u/82845372?v=4",
+      "gitname": "Facubra",
+      "descripcion":"Hola soy Facundo ,tengo 30 años soy estudiante de la facultad de ingeniería curso la Tecnicatura en Desarrollo Integral de Videojuegos, soy de  Palpala – Jujuy –  Argentina. Mi tarea asignada fue gestionar el error de acceso a una url inválida, incorporar audio y el diseño propio de las imágenes a usar en el proyecto junto a compañero Emmanuel.",
+      "link":"https://github.com/Facubra"
+    },
+    {
+      "name": "Lucas Jose Fernando Velasquez",
+      "img": "https://avatars.githubusercontent.com/u/112434409?v=4",
+      "gitname": "Fernando29Velasquez",
+      "descripcion":"Hola soy Fernando, tengo 20 años soy estudiante de la facultad de ingeniería curso la Tecnicatura en Desarrollo Integral de Videojuegos, soy de San Salvador de Jujuy – Argentina. Como integrante del Grupo11 me designaron la parte del diseño de las páginas principales (Home, Play y About) junto con mi compañera Nadia. ",
+      "link":"https://github.com/Fernando29Velasquez"
+    },
+    {
+      "name": "Leonel Ezequiel Choque",
+      "img": "https://avatars.githubusercontent.com/u/91150997?v=4",
+      "gitname": "Leonel2099",
+      "descripcion":"Hola soy Leonel, tengo 23 años soy estudiante de la facultad de ingeniería curso la Tecnicatura en Desarrollo Integral de Videojuegos, soy de Perico – Jujuy –  Argentina. Mi tarea asignada fue la de hacer la Funcion principal junto a mi compañero Ariel.",
+      "link":"https://github.com/Leonel2099"
+    },
+    {
+      "name": "Emmanuel Joaquin Villegas",
+      "img": "https://avatars.githubusercontent.com/u/112435991?v=4",
+      "gitname": "Joavscript",
+      "descripcion":"Hola soy Emmanuel, tengo 33 años soy estudiante de la facultad de ingeniería curso la Tecnicatura en Desarrollo Integral de Videojuegos, soy de San Salvador de Jujuy – Argentina. Mi tarea asignada fue gestionar el error de acceso a una url inválida, incorporar audio y el diseño propio de las imágenes a usar en el proyecto junto a compañero Facundo.",
+      "link":"https://github.com/Joavscript"
+    },
+    {
+      "name": "Nadia Rosario Sanchez",
+      "img": "https://avatars.githubusercontent.com/u/112371346?v=4",
+      "gitname": "Nadssnchez",
+      "descripcion":"Hola soy Nadia, tengo 19 años soy estudiante de la facultad de ingeniería curso la Tecnicatura en Desarrollo Integral de Videojuegos, soy de San Salvador de Jujuy – Argentina. Como integrante del Grupo11 me designaron la parte del diseño de las páginas principales (Home, Play y About) junto con mi compañero Fernando. ",
+      "link":"https://github.com/nadssnchez"
+    }
+  ]
