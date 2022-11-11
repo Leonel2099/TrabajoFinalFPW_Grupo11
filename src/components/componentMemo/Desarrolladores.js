@@ -1,5 +1,5 @@
 import React from "react";
-import Integrantes from "./Integrantes.js";
+import Integrantes from "./Integrantes.js.js";
 import "./Styles/Desarrolladores.css";
 import desarrolladores from "../Componentes/Json/desarrolladores"
 
