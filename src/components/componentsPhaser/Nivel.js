@@ -19,6 +19,9 @@ export default class Nivel extends Phaser.Scene {
         this.tortuga4 = null;
         this.tortuga5 = null;
         this.tortuga6 = null;
+        this.LogL = null;
+        this.LogS = null;
+        this.LogXL = null;
     }
     create() {
         this.physics.world.setBoundsCollision(true, true, true, true);
@@ -87,6 +90,7 @@ export default class Nivel extends Phaser.Scene {
         //this.physics.add.overlap(this.player, this.lake, this.dead, null, this);
 
         this.createCar();
+        this.createLog();
         //a la tortuga se le asigna el sprite
         this.tortuga1 = this.physics.add.sprite(640, 150, 'turttle');
         this.tortuga2 = this.physics.add.sprite(678, 150, 'turttle');
@@ -107,6 +111,7 @@ export default class Nivel extends Phaser.Scene {
         this.car2 = this.physics.add.group();
         let distCar = 670;
         let distCar2 = 0;
+
         for (var i = 0; i < 2; i++) {
 
             this.car.create(distCar, 400, 'car1').setScale(1.5);
@@ -140,11 +145,55 @@ export default class Nivel extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.car, this.chocarPlayer, null, this);
     }
 
+    createLog() {
+        this.Log = this.physics.add.group({
+            key:'logL',
+            immovable:true,
+        });
+
+
+        let distLogL = Phaser.Math.Between(100, 400);
+        let distLogS = Phaser.Math.Between(100, 200);
+        /*let disLogXL =  Phaser.Math.Between(100,300);*/
+
+        for (var i = 0; i < 3; i++) {
+
+            this.Log.create(distLogL, 200, 'logL').setScale(1.5);
+            this.Log.create(distLogS, 250, 'logS').setScale(1.5);
+            /*this.LogL.create(disLogXL, 150, 'logXL').setScale(1.5);*/
+
+            distLogL += 300;
+            distLogS += 200;
+            /*disLogXL +=0;*/
+        }
+
+
+        this.physics.add.overlap(this.player, this.Log, this.chocarPlayer, null, this);
+        /*this.physics.add.overlap(this.player, this.LogS, this.chocarPlayer, null, this);*/
+        /*this.physics.add.overlap(this.player, this.LogXL, this.chocarPlayer, null, this);*/
+    }
+
+    moveLog() {
+        this.Log.setVelocityX(100);
+
+
+    }
+
+
+    /*chocarPlayer(player, LogL, LogS, LogXL) {
+        this.player.destroy();
+        this.player = this.physics.add.sprite(330, 668, 'frog').setScale(1.5);
+        this.physics.add.overlap(this.player, this.LogL, this.chocarPlayer, null, this);
+        this.physics.add.overlap(this.player, this.LogS, this.chocarPlayer, null, this);
+        this.physics.add.overlap(this.player, this.LogXL, this.chocarPlayer, null, this);
+
+    }*/
 
 
     update() {
 
         this.moveCar()
+        this.moveLog()
 
         //console.log(this.player.y, this.player.x)
         //  Horizontal movement every 250ms
@@ -193,6 +242,14 @@ export default class Nivel extends Phaser.Scene {
             this.tortuga5.x = 938;
             this.tortuga6.x = 976;
         }
+
+
+        if (this.Log.x > 600) {
+            this.Log.killAndHide(Log);
+            Log.body.enable = false;
+            console.Log('OK')
+        }
+
     }
     createBlocks() {
         this.blitter = this.add.blitter(0, 0, 'box')
