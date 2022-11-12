@@ -19,7 +19,6 @@ export default class Nivel extends Phaser.Scene {
         this.tortuga4 = null;
         this.tortuga5 = null;
         this.tortuga6 = null;
-
     }
     create() {
         this.physics.world.setBoundsCollision(true, true, true, true);
@@ -101,9 +100,6 @@ export default class Nivel extends Phaser.Scene {
             frameRate: 3,
             repeat: -1
         });
-
-
-
     }
 
     createCar() {
@@ -111,7 +107,6 @@ export default class Nivel extends Phaser.Scene {
         this.car2 = this.physics.add.group();
         let distCar = 670;
         let distCar2 = 0;
-
         for (var i = 0; i < 2; i++) {
 
             this.car.create(distCar, 400, 'car1').setScale(1.5);
@@ -175,7 +170,6 @@ export default class Nivel extends Phaser.Scene {
         //     this.player.setVelocityX(0);
         //     this.player.anims.play('turn')
         // }
-
         this.tortuga1.setVelocityX(-100);
         this.tortuga2.setVelocityX(-100);
         this.tortuga3.setVelocityX(-100);
