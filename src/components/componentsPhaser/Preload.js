@@ -5,6 +5,8 @@ export default class Preload extends Phaser.Scene {
     }
     preload() {
         this.load.image('meta', 'assets/assetsPhaser/meta.png');
+        this.load.image('meta1', 'assets/assetsPhaser/metaBig.png');
+        this.load.image('meta2', 'assets/assetsPhaser/metaSmall.png');
         this.load.image('lake', 'assets/assetsPhaser/lake.png');
         this.load.image('nenufar', 'assets/assetsPhaser/nenufar.png');
         this.load.image('platform', 'assets/assetsPhaser/plataform.png');
