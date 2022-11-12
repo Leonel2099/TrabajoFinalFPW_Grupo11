@@ -14,6 +14,11 @@ export default class Preload extends Phaser.Scene {
         this.load.image('car2', 'assets/assetsPhaser/car2.png');
         this.load.image('car3', 'assets/assetsPhaser/car3.png');
         this.load.spritesheet('turttle', 'assets/assetsPhaser/turttle.png',{ frameWidth: 37, frameHeight: 23 });
+        this.load.image('logL','assets/assetsPhaser/logL.png');
+        this.load.image('logS','assets/assetsPhaser/logS.png');
+        this.load.image('logXL','assets/assetsPhaser/logXL.png');
+
+
     }
 
     create() {
