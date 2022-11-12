@@ -10,6 +10,7 @@ export default class Nivel extends Phaser.Scene {
         this.x = 0;
         this.lake = null;
         this.meta = null;
+        this.metaNew = null;
         this.car = null;
         this.car2 = null;
         this.car3 = null;
@@ -53,12 +54,27 @@ export default class Nivel extends Phaser.Scene {
             setScale: { x: 2, y: 2.8 },
         });
 
-        this.meta = this.physics.add.staticGroup();
-        this.meta.create(399, 53, 'meta').setScale(2).refreshBody();
+        //this.meta = this.physics.add.staticGroup();
+        //this.meta.create(399, 53, 'meta').setScale(2).refreshBody();
         this.player = this.physics.add.sprite(330, 668, 'frog').setScale(1.5);
         this.player.setCollideWorldBounds(true);
-        this.physics.add.collider(this.meta, this.player);
+        //this.physics.add.collider(this.meta, this.player);
         //this.meta.setCollideWorldBounds(true);
+
+
+        //META VERSION SEPARADA EN DOS PARTES
+        this.metaNew = this.physics.add.group();
+        
+        this.metaNew.create(-21, 55, 'meta1').setScale(2);
+        this.metaNew.create(60, 18, 'meta2').setScale(2);
+        this.metaNew.create(146, 55, 'meta1').setScale(2);
+        this.metaNew.create(227, 18, 'meta2').setScale(2);
+        this.metaNew.create(313, 55, 'meta1').setScale(2);
+        this.metaNew.create(394, 18, 'meta2').setScale(2);
+        this.metaNew.create(480, 55, 'meta1').setScale(2);
+        this.metaNew.create(561, 18, 'meta2').setScale(2);
+        this.metaNew.create(647, 55, 'meta1').setScale(2);
+        this.physics.add.collider(this.metaNew, this.player);
 
         //Movimientos(se usan en el Update)
         this.anims.create({
