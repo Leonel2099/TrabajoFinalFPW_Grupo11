@@ -13,7 +13,12 @@ export default class Nivel extends Phaser.Scene {
         this.car = null;
         this.car2 = null;
         this.car3 = null;
-
+        this.tortuga1 = null;
+        this.tortuga2 = null;
+        this.tortuga3 = null;
+        this.tortuga4 = null;
+        this.tortuga5 = null;
+        this.tortuga6 = null;
     }
     create() {
         this.physics.world.setBoundsCollision(true, true, true, true);
@@ -82,9 +87,19 @@ export default class Nivel extends Phaser.Scene {
         //this.physics.add.overlap(this.player, this.lake, this.dead, null, this);
 
         this.createCar();
-
-
-
+        //a la tortuga se le asigna el sprite
+        this.tortuga1 = this.physics.add.sprite(640, 150, 'turttle');
+        this.tortuga2 = this.physics.add.sprite(678, 150, 'turttle');
+        this.tortuga3 = this.physics.add.sprite(716, 150, 'turttle');
+        this.tortuga4 = this.physics.add.sprite(900, 150, 'turttle');
+        this.tortuga5 = this.physics.add.sprite(938, 150, 'turttle');
+        this.tortuga6 = this.physics.add.sprite(976, 150, 'turttle');
+        this.anims.create({
+            key: 'move',
+            frames: this.anims.generateFrameNumbers('turttle', { start: 0, end: 4 }),
+            frameRate: 3,
+            repeat: -1
+        });
     }
 
     createCar() {
@@ -92,14 +107,13 @@ export default class Nivel extends Phaser.Scene {
         this.car2 = this.physics.add.group();
         let distCar = 670;
         let distCar2 = 0;
-    
         for (var i = 0; i < 2; i++) {
 
             this.car.create(distCar, 400, 'car1').setScale(1.5);
             this.car2.create(distCar2, 450, 'car2').setScale(1.5);
             this.car.create(distCar, 500, 'car3').setScale(1.5);
             distCar += 200;
-            distCar2 +=200;
+            distCar2 += 200;
         }
 
 
@@ -156,6 +170,29 @@ export default class Nivel extends Phaser.Scene {
         //     this.player.setVelocityX(0);
         //     this.player.anims.play('turn')
         // }
+        this.tortuga1.setVelocityX(-100);
+        this.tortuga2.setVelocityX(-100);
+        this.tortuga3.setVelocityX(-100);
+        this.tortuga4.setVelocityX(-100);
+        this.tortuga5.setVelocityX(-100);
+        this.tortuga6.setVelocityX(-100);
+        //this.tortugas.setVelocityX(-100);
+        this.tortuga1.anims.play('move', true);
+        this.tortuga2.anims.play('move', true);
+        this.tortuga3.anims.play('move', true);
+        this.tortuga4.anims.play('move', true);
+        this.tortuga5.anims.play('move', true);
+        this.tortuga6.anims.play('move', true);
+        if (this.tortuga1.x < 0 && this.tortuga2.x < 0 && this.tortuga3.x < 0) {
+            this.tortuga1.x = 640;
+            this.tortuga2.x = 678;
+            this.tortuga3.x = 716;
+        }
+        if (this.tortuga4.x < 0 && this.tortuga5.x < 0 && this.tortuga6.x < 0) {
+            this.tortuga4.x = 900;
+            this.tortuga5.x = 938;
+            this.tortuga6.x = 976;
+        }
     }
     createBlocks() {
         this.blitter = this.add.blitter(0, 0, 'box')
