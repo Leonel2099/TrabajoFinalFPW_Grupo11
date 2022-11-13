@@ -20,18 +20,18 @@ export default class Nivel extends Phaser.Scene {
         this.tortuga4 = null;
         this.tortuga5 = null;
         this.tortuga6 = null;
-        this.LogL = null;
-        this.LogS = null;
-        this.LogXL = null;
+        this.woodS = null;
+        this.woodL = null;
+        this.woodXL = null;
+        this.gWood=null;
     }
     create() {
-        this.physics.world.setBoundsCollision(true, true, true, true);
-        this.lake = this.physics.add.staticGroup({
-            key: 'lake',
-            setScale: { x: 0.4, y: 0.1 }
-        })
+        // this.lake = this.physics.add.staticGroup({
+        //     key: 'lake',
+        //     setScale: { x: 0.4, y: 0.1 }
+        // })
         //this.lake=this.physics.add.image(320, 157, 'lake').setSize(300,300,true);
-        this.playerWin = this.physics.add.staticGroup();
+        //this.playerWin = this.physics.add.staticGroup();
         this.playerWin = this.physics.add.staticGroup({
             key: 'frogWin',
             repeat: 4,
@@ -56,15 +56,26 @@ export default class Nivel extends Phaser.Scene {
 
         //this.meta = this.physics.add.staticGroup();
         //this.meta.create(399, 53, 'meta').setScale(2).refreshBody();
-        this.player = this.physics.add.sprite(330, 668, 'frog').setScale(1.5);
-        this.player.setCollideWorldBounds(true);
         //this.physics.add.collider(this.meta, this.player);
         //this.meta.setCollideWorldBounds(true);
 
 
         //META VERSION SEPARADA EN DOS PARTES
-        this.metaNew = this.physics.add.group();
-        
+
+        //a la tortuga se le asigna el sprite
+        this.tortuga1 = this.physics.add.sprite(640, 150, 'turttle').setScale(1.5);
+        this.tortuga2 = this.physics.add.sprite(678, 150, 'turttle').setScale(1.5);
+        this.tortuga3 = this.physics.add.sprite(716, 150, 'turttle').setScale(1.5);
+        this.tortuga4 = this.physics.add.sprite(900, 150, 'turttle').setScale(1.5);
+        this.tortuga5 = this.physics.add.sprite(938, 150, 'turttle').setScale(1.5);
+        this.tortuga6 = this.physics.add.sprite(976, 150, 'turttle').setScale(1.5);
+        this.anims.create({
+            key: 'move',
+            frames: this.anims.generateFrameNumbers('turttle', { start: 0, end: 2 }),
+            frameRate: 3,
+        });
+        this.metaNew = this.physics.add.staticGroup();
+
         this.metaNew.create(-21, 55, 'meta1').setScale(2);
         this.metaNew.create(60, 18, 'meta2').setScale(2);
         this.metaNew.create(146, 55, 'meta1').setScale(2);
@@ -74,8 +85,11 @@ export default class Nivel extends Phaser.Scene {
         this.metaNew.create(480, 55, 'meta1').setScale(2);
         this.metaNew.create(561, 18, 'meta2').setScale(2);
         this.metaNew.create(647, 55, 'meta1').setScale(2);
-        this.physics.add.collider(this.metaNew, this.player);
-
+        //this.createCar();
+        this.createWood();
+        this.player = this.physics.add.sprite(330, 668, 'frog').setScale(1.5);
+        this.player.setCollideWorldBounds(true);
+        this.player.setData('block', true);
         //Movimientos(se usan en el Update)
         this.anims.create({
             key: 'left',
@@ -102,114 +116,22 @@ export default class Nivel extends Phaser.Scene {
             frames: [{ key: 'frog', frame: 4 }],
             frameRate: 20
         });
+        this.physics.add.collider(this.player, this.metaNew, this.block, null, this);
         this.physics.add.overlap(this.player, this.nenufar, this.win, null, this);
         //this.physics.add.overlap(this.player, this.lake, this.dead, null, this);
-
-        this.createCar();
-        this.createLog();
-        //a la tortuga se le asigna el sprite
-        this.tortuga1 = this.physics.add.sprite(640, 150, 'turttle');
-        this.tortuga2 = this.physics.add.sprite(678, 150, 'turttle');
-        this.tortuga3 = this.physics.add.sprite(716, 150, 'turttle');
-        this.tortuga4 = this.physics.add.sprite(900, 150, 'turttle');
-        this.tortuga5 = this.physics.add.sprite(938, 150, 'turttle');
-        this.tortuga6 = this.physics.add.sprite(976, 150, 'turttle');
-        this.anims.create({
-            key: 'move',
-            frames: this.anims.generateFrameNumbers('turttle', { start: 0, end: 4 }),
-            frameRate: 3,
-            repeat: -1
-        });
     }
-
-    createCar() {
-        this.car = this.physics.add.group();
-        this.car2 = this.physics.add.group();
-        let distCar = 670;
-        let distCar2 = 0;
-
-        for (var i = 0; i < 2; i++) {
-
-            this.car.create(distCar, 400, 'car1').setScale(1.5);
-            this.car2.create(distCar2, 450, 'car2').setScale(1.5);
-            this.car.create(distCar, 500, 'car3').setScale(1.5);
-            distCar += 200;
-            distCar2 += 200;
-        }
-
-
-        this.physics.add.overlap(this.player, this.car, this.chocarPlayer, null, this);
-        this.physics.add.overlap(this.player, this.car2, this.chocarPlayer, null, this);
-
-    }
-
-    moveCar() {
-        this.car.setVelocityX(-100);
-        this.car2.setVelocityX(100);
-        this.resetPositionCar();
-    }
-
-    resetPositionCar() {
-        if (this.car.x <= 0) {
-            this.car.x = 675;
-        }
-    }
-
-    chocarPlayer(player, car) {
-        this.player.destroy();
-        this.player = this.physics.add.sprite(330, 668, 'frog').setScale(1.5);
-        this.physics.add.overlap(this.player, this.car, this.chocarPlayer, null, this);
-    }
-
-    createLog() {
-        this.Log = this.physics.add.group({
-            key:'logL',
-            immovable:true,
-        });
-
-
-        let distLogL = Phaser.Math.Between(100, 400);
-        let distLogS = Phaser.Math.Between(100, 200);
-        /*let disLogXL =  Phaser.Math.Between(100,300);*/
-
-        for (var i = 0; i < 3; i++) {
-
-            this.Log.create(distLogL, 200, 'logL').setScale(1.5);
-            this.Log.create(distLogS, 250, 'logS').setScale(1.5);
-            /*this.LogL.create(disLogXL, 150, 'logXL').setScale(1.5);*/
-
-            distLogL += 300;
-            distLogS += 200;
-            /*disLogXL +=0;*/
-        }
-
-
-        this.physics.add.overlap(this.player, this.Log, this.chocarPlayer, null, this);
-        /*this.physics.add.overlap(this.player, this.LogS, this.chocarPlayer, null, this);*/
-        /*this.physics.add.overlap(this.player, this.LogXL, this.chocarPlayer, null, this);*/
-    }
-
-    moveLog() {
-        this.Log.setVelocityX(100);
-
-
-    }
-
-
-    /*chocarPlayer(player, LogL, LogS, LogXL) {
-        this.player.destroy();
-        this.player = this.physics.add.sprite(330, 668, 'frog').setScale(1.5);
-        this.physics.add.overlap(this.player, this.LogL, this.chocarPlayer, null, this);
-        this.physics.add.overlap(this.player, this.LogS, this.chocarPlayer, null, this);
-        this.physics.add.overlap(this.player, this.LogXL, this.chocarPlayer, null, this);
-
-    }*/
 
 
     update() {
 
-        this.moveCar()
-        this.moveLog()
+        this.physics.add.overlap(this.player, [this.tortuga1,
+        this.tortuga2,
+        this.tortuga3,
+        this.tortuga4,
+        this.tortuga5,
+        this.tortuga6], this.over, null, this);
+        //  this.moveCar()
+        // this.moveLog()
 
         //console.log(this.player.y, this.player.x)
         //  Horizontal movement every 250ms
@@ -221,27 +143,46 @@ export default class Nivel extends Phaser.Scene {
             this.player.x += 30;
             this.player.anims.play('right', true)
         }
-
         //  Vertical movement every 150ms
-        if (this.input.keyboard.checkDown(this.cursors.up, 150)) {
+        if (this.input.keyboard.checkDown(this.cursors.up, 150) && this.player.getData('block')) {
             this.player.y -= 30;
             this.player.anims.play('up', true)
+            this.player.setVelocityX(0)
         }
         else if (this.input.keyboard.checkDown(this.cursors.down, 150)) {
             this.player.y += 30;
             this.player.anims.play('down', true)
+            this.player.setData('block', true);
+            this.player.setVelocityX(0)
         }
         // else{
         //     this.player.setVelocityX(0);
         //     this.player.anims.play('turn')
         // }
+        this.moveTurtles();
+        this.moveWood();
+        // console.log(wood.getvelocity());
+    }
+    moveWood() {
+        this.gWood.children.iterate((x)=>{
+            x.setVelocityX(-100);
+            console.log(this.gWood.getChildren().indexOf(1).x)
+        });
+        // this.woodL.setVelocityX(-100);
+        // this.woodL.setVelocityX(-100);
+        // this.woodXL.setVelocityX(-100);
+        // this.woodXL.setVelocityX(-100);
+        // let wood = this.gWood.getChildren()
+    }
+    moveTurtles() {
         this.tortuga1.setVelocityX(-100);
         this.tortuga2.setVelocityX(-100);
         this.tortuga3.setVelocityX(-100);
         this.tortuga4.setVelocityX(-100);
         this.tortuga5.setVelocityX(-100);
         this.tortuga6.setVelocityX(-100);
-        //this.tortugas.setVelocityX(-100);
+        
+
         this.tortuga1.anims.play('move', true);
         this.tortuga2.anims.play('move', true);
         this.tortuga3.anims.play('move', true);
@@ -258,22 +199,49 @@ export default class Nivel extends Phaser.Scene {
             this.tortuga5.x = 938;
             this.tortuga6.x = 976;
         }
+    }
+    block() {
+        this.player.setData('block', false);
+    }
+    over() {
+        this.player.setVelocityX(-100);
+    }
+    createCar() {
 
+        this.car = this.physics.add.group();
+        this.car2 = this.physics.add.group();
+        let distCar = 670;
+        let distCar2 = 0;
 
-        if (this.Log.x > 600) {
-            this.Log.killAndHide(Log);
-            Log.body.enable = false;
-            console.Log('OK')
+        for (var i = 0; i < 2; i++) {
+            this.car.create(distCar, 400, 'car1').setScale(1.5);
+            this.car2.create(distCar2, 450, 'car2').setScale(1.5);
+            this.car.create(distCar, 500, 'car3').setScale(1.5);
+            distCar += 200;
+            distCar2 += 200;
         }
+        this.physics.add.overlap(this.player, this.car, this.dead, null, this);
+        this.physics.add.overlap(this.player, this.car2, this.dead, null, this);
 
     }
-    createBlocks() {
-        this.blitter = this.add.blitter(0, 0, 'box')
-        for (let y = 0; y < 15; y++) {
-            for (let x = 0; x < 10; x++) {
-                this.blitter.create(x * 64, y * 64);
-            }
+
+    moveCar() {
+        this.car.setVelocityX(-100);
+        this.car2.setVelocityX(100);
+    }
+
+    createWood() {
+        this.gWood = this.physics.add.group();
+        let disH=900;
+        for(let i=0 ;i<2;i++){
+            this.gWood.create(disH, 300, 'woodS').setScale(1.5);
+            disH+=200;
         }
+        // this.woodS = this.physics.add.image(678, 300, 'woodS').setScale(1.5);
+        // this.woodL = this.physics.add.image(-900, 150, 'woodL').setScale(1.5);
+        // this.woodL = this.physics.add.image(900, 300, 'woodL').setScale(1.5);
+        // this.woodXL = this.physics.add.image(-900, 150, 'woodXL').setScale(1.5);
+        // this.woodXL = this.physics.add.image(976, 300, 'woodXL').setScale(1.5);
     }
     win(player, nenufar) {
         //this.playerWin.create(55, 65, 'frogWin').setScale(1.5);
@@ -282,13 +250,17 @@ export default class Nivel extends Phaser.Scene {
         this.player.destroy();
         this.player = this.physics.add.sprite(330, 668, 'frog').setScale(1.5);
         this.player.setCollideWorldBounds(true);
+        this.player.setData('block', true);
         this.physics.add.overlap(this.player, this.nenufar, this.win, null, this);
+        this.physics.add.collider(this.player, this.metaNew, this.block, null, this);
     }
     dead(player, nenufar) {
         this.player.destroy();
         this.player = this.physics.add.sprite(330, 668, 'frog').setScale(1.5);
         this.player.setCollideWorldBounds(true);
+        this.player.setData('block', true);
         this.physics.add.overlap(this.player, this.lake, this.dead, null, this);
+        this.physics.add.collider(this.player, this.metaNew, this.block, null, this);
     }
 
 };

@@ -3,7 +3,7 @@ import Canvas from "./components/componentsPhaser/Canvas";
 export default function Game() {
     return(
      <>
-        <Function></Function>
+        {/* <Function></Function> */}
         <Canvas />
      </>
     )
