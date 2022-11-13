@@ -1,0 +1,115 @@
+/* ----------------- Contenedor de cada uno  ----------------- */
+.contPadre {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.contPrincipal {
+    min-height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+/* ---- Color del contenedor --- */
+.contProps {
+    border: 1px solid rgb(255, 255, 255);
+    width: 1170px;
+    height: 368px;
+    margin: 10px 10px 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: rgb(7, 10, 34);
+    box-shadow: inset 
+    0 0 5px #1e00ff,
+    0 0 10px#66eaff,
+    0 0 25px #008195;
+}
+
+/* ----------------- Estilo de imagen ----------------- */
+.imagen {
+    height: 100%;
+    width: auto;
+    filter: grayscale(100%);
+
+}
+
+/* ----------------- Estilo de la informacion ----------------- */
+.contenedortexto {
+    text-align: center;
+    padding: 40px;
+    font-weight: 400;
+    line-height: 1.5rem;
+
+}
+
+
+.name {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color:#ffffff;
+    text-shadow: 
+    0 0 80px  	#008195, 
+    0 0 50px 	#66eaff,
+    0 0 20px #99f1ff    ,
+    0 0 10px #1e00ff;
+
+}
+
+.gitname {
+    font-size: 1.3rem;
+    margin-top: 15px;
+    padding-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color:#ffffff;
+    text-shadow: 
+    0 0 80px  	#008195, 
+    0 0 50px 	#66eaff,
+    0 0 20px #99f1ff    ,
+    0 0 10px #1e00ff;
+}
+
+.descripcion {
+    font-size: 1.1rem;
+    text-align: justify;
+    cursor: pointer;
+    transition: 1s;
+
+
+}
+.descripcion:hover{
+    
+    color:white;
+    text-shadow: 
+    0 0 80px  	#008195, 
+    0 0 50px 	#66eaff,
+    0 0 20px #256c77 ,
+    0 0 10px #1e00ff;
+
+}
+
+a{
+    font-size: 0.8rem;
+    text-align: justify;
+    cursor: pointer;
+    transition: 1s;
+    color: rgba(28, 28, 28, 0.69);
+    background-color: transparent;
+}
+a:hover{
+    
+    color:white;
+    text-shadow: 
+    0 0 80px  	#008195, 
+    0 0 50px 	#66eaff,
+    0 0 20px #256c77 ,
+    0 0 10px #1e00ff;
+}
