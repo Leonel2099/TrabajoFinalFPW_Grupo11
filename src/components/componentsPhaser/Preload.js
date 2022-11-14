@@ -7,8 +7,6 @@ export default class Preload extends Phaser.Scene {
         this.load.image('meta', 'assets/assetsPhaser/meta.png');
         this.load.image('lake', 'assets/assetsPhaser/lake.png');
         this.load.image('lakeM', 'assets/assetsPhaser/lake_M.png');
-        this.load.image('lakeM1', 'assets/assetsPhaser/lake_M1.png');
-        this.load.image('lakeM2', 'assets/assetsPhaser/lake_M2.png');
         this.load.image('nenufar', 'assets/assetsPhaser/loto.png');
         this.load.image('platform', 'assets/assetsPhaser/plataform.png');
         this.load.spritesheet('frog', 'assets/assetsPhaser/frogger.png', { frameWidth: 31.25, frameHeight: 28.5});
@@ -17,11 +15,8 @@ export default class Preload extends Phaser.Scene {
         this.load.image('car2', 'assets/assetsPhaser/car2.png');
         this.load.image('car3', 'assets/assetsPhaser/car3.png');
         this.load.spritesheet('turttle', 'assets/assetsPhaser/turttle.png',{ frameWidth: 37, frameHeight: 23 });
-        this.load.image('woodS','assets/assetsPhaser/logL.png');
-        this.load.image('woodL','assets/assetsPhaser/logS.png');
+        this.load.image('woodL','assets/assetsPhaser/logL.png');
         this.load.image('woodXL','assets/assetsPhaser/logXL.png');
-
-
     }
 
     create() {

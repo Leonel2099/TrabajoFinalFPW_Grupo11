@@ -1,0 +1,120 @@
+.carousel{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+.carousel img{
+    margin-left: 75px;
+    width: 800px;
+    height: 500px;
+    border-radius: 60px ;
+}
+.carousel-control-prev  {
+    margin-top: 250px;
+    width: 40px;
+    height: 50px;
+    background-color: #2d3b542b;
+    border-radius: 60px ;
+}
+.carousel-control-next {
+    margin-top: 250px;
+    width: 40px;
+    height: 50px;
+    border-radius: 60px ;
+    background-color: 	#2d3b542b;
+}
+.play{
+    width: 100;
+    background-color: #091833;
+}.linkGames {
+    display:flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+    text-decoration: none;
+}
+.linkGames a h6 {
+    color:white;
+    text-shadow: 
+    0 0 80px  	#008195, 
+    0 0 50px 	#66eaff,
+    0 0 20px #256c77 ,
+    0 0 10px #1e00ff;
+}
+.linkGames a h6:hover {
+    color:#133e7c;
+    text-shadow: 
+    0 0 80px  	#008195, 
+    0 0 50px 	#66eaff,
+    0 0 20px #256c77 ,
+    0 0 10px #1e00ff;
+}
+.linkPlay{
+    padding-left: 10px;
+}
+.card-text{
+    padding: 5px 0px;
+}
+.cardGames{
+    margin: 10px 0px;
+}
+.cardsG{
+    margin: 10px 40px 0px 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.card-img-top{
+    width: 240px;
+    height: 150px;
+    border-radius: 30px;
+}
+.cardsG .card-body{
+    background-color: #091833;
+    box-shadow: 8px 5px 8px 1px #133e7c
+}
+.cardsG .card-body:hover{
+    box-shadow: 8px 5px 8px 1px #13637c
+}
+.navbar{
+    background-color: #091833;
+}
+.container {
+    width: 500px;
+    margin: 10px 0px;
+    padding-left: 30px ;
+}
+.navbar .letras a{
+    margin: 10px 10px;
+    padding: 0px;
+    color: #ffffff;
+    font-size:x-large;
+}
+.navbar .letras a:hover{
+    color: #0abdc6;
+    text-shadow: 
+    0 0 80px  	#008195, 
+    0 0 50px 	#66eaff,
+    0 0 20px #256c77 ,
+    0 0 10px #1e00ff;
+    font-size:x-large;
+}
+.tituloP{
+    margin-left: 400px;
+    color: #ffffff;
+}
+.carousel-caption{
+    background-color: #091833b3;
+    color: #ffffff;
+    font-size: xx-large;
+    height: 200px;
+    width: 800px;
+    border-radius: 30px;
+    margin-left: 30px;
+}
+.carousel-caption:hover{
+    background-color: #091833dd;
+    color: #ffffff;
+}
