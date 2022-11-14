@@ -30,6 +30,9 @@ export default class Nivel extends Phaser.Scene {
         this.woodL = null;
         this.woodXL = null;
         this.gWood = null;
+        this.lifePlayer= 3;
+        this.lifeText = null;
+
     }
     create() {
         this.lakeM = this.physics.add.image(866.5, 125, 'lakeM');//Lago movible para colision
@@ -124,6 +127,7 @@ export default class Nivel extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.lakeM2, this.dead, null, this);
 
         this.scoreText = this.add.text(20, 630, 'Score: 0', { fontSize: '25px', fill: '#fff' });
+        this.lifeText = this.add.text(10, 2, '🐸🐸🐸', { fontSize: '25px', fill: '#fff' });
 
     }
 
@@ -141,7 +145,7 @@ export default class Nivel extends Phaser.Scene {
         //  this.moveCar()
         // this.moveLog()
 
-        //console.log(this.player.y, this.player.x)
+       
         //  Horizontal movement every 250ms
         if (this.input.keyboard.checkDown(this.cursors.left, 250)) {
             this.player.x -= 32;
@@ -293,7 +297,21 @@ export default class Nivel extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.lakeM1, this.dead, null, this);
         this.physics.add.overlap(this.player, this.lakeM2, this.dead, null, this);
         this.physics.add.overlap(this.player, this.nenufar, this.win, null, this);
+        this.lifePlayer = this.lifePlayer - 1;
+        this.gameOver();
+    }
 
+    gameOver(){
+        if(this.lifePlayer == 2){
+            this.lifeText.setText('🐸🐸');
+        }
+        else if(this.lifePlayer == 1){
+            this.lifeText.setText('🐸');
+        }
+        else if(this.lifePlayer == 0){
+            this.lifeText.setText(' ');
+           // this.scene.start('GameOver')
+        }
     }
 
 };
