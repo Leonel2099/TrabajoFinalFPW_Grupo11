@@ -13,8 +13,12 @@ export default class Nivel extends Phaser.Scene {
         this.lakeM1 = null;
         this.lakeM2 = null;
         this.car = null;
+        this.car1 = null;
+        this.car1a = null;
         this.car2 = null;
+        this.car2a = null;
         this.car3 = null;
+        this.car3a = null;
         this.tortuga1 = null;
         this.tortuga2 = null;
         this.tortuga3 = null;
@@ -60,6 +64,15 @@ export default class Nivel extends Phaser.Scene {
 
 
         //META VERSION SEPARADA EN DOS PARTES
+
+        this.car = this.physics.add.image(640, 380, 'car1').setScale(1.5);
+        this.car1 = this.physics.add.image(800, 380, 'car1').setScale(1.5);
+        this.car1a = this.physics.add.image(960, 380, 'car1').setScale(1.5);
+        this.car2 = this.physics.add.image(0, 480, 'car2').setScale(1.5);
+        this.car2a = this.physics.add.image(-130, 480, 'car2').setScale(1.5);
+        this.car3 = this.physics.add.image(640, 580, 'car3').setScale(1.5);
+        this.car3a = this.physics.add.image(800, 580, 'car3').setScale(1.5);
+
 
         //a la tortuga se le asigna el sprite
         this.tortuga1 = this.physics.add.sprite(640, 125, 'turttle').setScale(1.5);
@@ -113,6 +126,8 @@ export default class Nivel extends Phaser.Scene {
 
     update() {
 
+        this.physics.add.overlap(this.player, [this.car, this.car1, this.car1a, this.car2, this.car2a, this.car3, this.car3a], this.dead, null, this);
+
         this.physics.add.overlap(this.player, [this.tortuga1,
             this.tortuga2,
             this.tortuga3,
@@ -147,6 +162,7 @@ export default class Nivel extends Phaser.Scene {
         //     this.player.setVelocityX(0);
         //     this.player.anims.play('turn')
         // }
+        this.moveCars();
         this.moveTurtles();
         this.moveWood();
         this.moveLake();
@@ -208,28 +224,30 @@ export default class Nivel extends Phaser.Scene {
     over() {
         this.player.setVelocityX(-100);
     }
-    createCar() {
 
-        this.car = this.physics.add.group();
-        this.car2 = this.physics.add.group();
-        let distCar = 670;
-        let distCar2 = 0;
-
-        for (var i = 0; i < 2; i++) {
-            this.car.create(distCar, 400, 'car1').setScale(1.5);
-            this.car2.create(distCar2, 450, 'car2').setScale(1.5);
-            this.car.create(distCar, 500, 'car3').setScale(1.5);
-            distCar += 200;
-            distCar2 += 200;
+    moveCars() {
+        this.car.setVelocityX(-200);
+        this.car1.setVelocityX(-200);
+        this.car1a.setVelocityX(-200);
+        this.car2.setVelocityX(350);
+        this.car2a.setVelocityX(350);
+        this.car3.setVelocityX(-150);
+        this.car3a.setVelocityX(-150);
+        if (this.car.x < 0 && this.car1.x < 0 && this.car1a.x < 0) {
+            this.car.x = 640;
+            this.car1.x = 800;
+            this.car1a.x = 960;
         }
-        this.physics.add.overlap(this.player, this.car, this.dead, null, this);
-        this.physics.add.overlap(this.player, this.car2, this.dead, null, this);
 
-    }
+        if (this.car3.x < 0 && this.car3a.x < 0) {
+            this.car3.x = 640;
+            this.car3a.x = 800;
+        }
 
-    moveCar() {
-        this.car.setVelocityX(-100);
-        this.car2.setVelocityX(100);
+        if (this.car2.x > 640 && this.car2a.x > 640) {
+            this.car2.x = 0;
+            this.car2a.x = -130;
+        }
     }
 
     createWood() {
