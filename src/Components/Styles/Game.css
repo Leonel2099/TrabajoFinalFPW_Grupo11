@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+ 
+body{
+    background-image: url('../../Assets/img/playstation-abstracto_1920x1080_xtrafondos.com.jpg');
+}

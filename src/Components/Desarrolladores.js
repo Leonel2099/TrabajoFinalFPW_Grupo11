@@ -1,7 +1,7 @@
 import React from "react";
-import Integrantes from "./Integrantes.js.js.js";
+import Integrantes from "./Integrantes";
 import "./Styles/Desarrolladores.css";
-import desarrolladores from "../Componentes/Json/desarrolladores"
+import desarrolladores from "./Json/desarolladores.json"
 
 /** Cree un array de objectos compuesto por la informacion de cada alumno y integrante del grupo 11
  * solicitado por el profesor en un componente Json ("desarroladores.json") como el nombre completo, usuario git,etc.

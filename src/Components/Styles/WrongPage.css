@@ -1,0 +1,16 @@
+h1, h2, h3{
+    color: rgb(33, 181, 240);
+}
+
+.imgerror{
+    width: 300px;
+    height: 300px;
+    border-radius: 50px;
+
+}
+.contain-wrongPage{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

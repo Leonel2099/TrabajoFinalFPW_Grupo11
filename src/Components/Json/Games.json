@@ -1,0 +1,58 @@
+[
+    {
+        "img":"./Assets/img/PPT.png",
+        "titulo":"Piedra✊Papel✋Tijera✌",
+        "descripcion":"Primer juego echo solo con React,JavaScript,HTML,CSS y un poco de Bootstrap",
+        "linkG":"https://github.com/Leonel2099/PiedraPapelYTijeraGrupo11",
+        "linkP":"/Ppt"
+    },
+    {
+        "img":"./Assets/img/Ahorcadito.png",
+        "titulo":"Ahorcadito ☠",
+        "descripcion":"Segundo juego echo solo con React,JavaScript,HTML,CSS y Bootstrap",
+        "linkG":"https://github.com/Leonel2099/AhorcaditoGrupo11",
+        "linkP":"/Ahorcadito"
+    },
+    {
+        "img":"./Assets/img/Arkanoid.png",
+        "titulo":"Arkanoid",
+        "descripcion":"Tercer juego creado con Phaser,JavaScript, React y un poco de CSS",
+        "linkG":"https://github.com/Leonel2099/Proyecto_Arkanoid_Grupo_11",
+        "linkP":"/Arkanoid"
+    },
+    {
+        "img":"./Assets/img/Memo.png",
+        "titulo":"Memory Test",
+        "descripcion":"Cuarto juego creado con React,JavaScript,HTML,CSS y Bootstrap",
+        "linkG":"#",
+        "linkP":"/Memo"
+    },
+    {
+        "img":"./Assets/img/PPT.png",
+        "titulo":"Frogger",
+        "descripcion":"Quinto juego Phaser,JavaScript, React y un poco de CSS",
+        "linkG":"#",
+        "linkP":"/Frogger"
+    },
+    {
+        "img":"../Assets/icons/error404.png",
+        "titulo":"Cooming Soon ",
+        "descripcion":"//////////////////////////////////////////////////////////",
+        "linkG":"*",
+        "linkP":"*"
+    },
+    {
+        "img":"../Assets/icons/error404.png",
+        "titulo":"Cooming Soon ",
+        "descripcion":"//////////////////////////////////////////////////////////",
+        "linkG":"*",
+        "linkP":"*"
+    },
+    {
+        "img":"../Assets/icons/error404.png",
+        "titulo":"Cooming Soon",
+        "descripcion":"//////////////////////////////////////////////////////////",
+        "linkG":"*",
+        "linkP":"*"
+    }
+]
