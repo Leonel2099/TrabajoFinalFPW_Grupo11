@@ -8,6 +8,7 @@ export default class Nivel extends Phaser.Scene {
         this.platform = null;
         this.nenufar = null;
         this.x = 0;
+        this.score = 0;
         this.lake = null;
         this.lakeM = null;
         this.lakeM1 = null;
@@ -121,6 +122,9 @@ export default class Nivel extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.lakeM, this.dead, null, this);
         this.physics.add.overlap(this.player, this.lakeM1, this.dead, null, this);
         this.physics.add.overlap(this.player, this.lakeM2, this.dead, null, this);
+
+        this.scoreText = this.add.text(20, 630, 'Score: 0', { fontSize: '25px', fill: '#fff' });
+
     }
 
 
@@ -274,6 +278,12 @@ export default class Nivel extends Phaser.Scene {
         this.physics.add.overlap(this.player, this.lakeM, this.dead, null, this);
         this.physics.add.overlap(this.player, this.lakeM1, this.dead, null, this);
         this.physics.add.overlap(this.player, this.lakeM2, this.dead, null, this);
+        this.score += 100;
+        this.scoreText.setText('Score: ' + this.score);
+        if (this.score === 400) {
+            this.physics.pause();
+            this.scene.start('')
+        }
     }
     dead(player, nenufar) {
         this.player.destroy();
