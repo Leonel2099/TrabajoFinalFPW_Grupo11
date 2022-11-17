@@ -17,7 +17,7 @@ export default function Canvas() {
                 height: 682
             },
         }
-        const Escenas = [Preload,Inicio,Nivel,Derrota]
+        const Escenas = [Preload,Inicio,Nivel,Victoria,Derrota] //[Preload,Inicio,Nivel,Victoria,Derrota]
         const crearEscena = Scene => new Scene(CONFIGURACION)
         const iniciarEscena = () => Escenas.map(crearEscena)
 

@@ -2,6 +2,11 @@ import React from 'react';
 import MemoBlock from './MemoBlock';
 import "../Styles/Board.css";
 
+
+//-----------Engloba todo el tablero--------------------//
+/*---Se itera cada uno de los bloques mediante un map del cual consigo un 
+identificador unico para cada bloque junto con su informacion----*/
+
 const Board = ({animating, handleMemoClick, memoBlocks}) => {
     return (
         <main className="board">
@@ -11,5 +16,9 @@ const Board = ({animating, handleMemoClick, memoBlocks}) => {
         </main>
     );
 }
+
+
+
+
 
 export default Board;

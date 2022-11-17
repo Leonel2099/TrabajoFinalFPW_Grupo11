@@ -332,7 +332,7 @@ export default class Nivel extends Phaser.Scene {
     win() {
         if (this.score === 400) {
             this.physics.pause();
-            this.scene.start('')
+            this.scene.start('ganaste')
         }
     }
     gameOver() {

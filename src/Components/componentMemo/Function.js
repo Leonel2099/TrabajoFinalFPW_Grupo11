@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import Board from './Board';
-const emojiList = [...'🥊🏓🏸🏈⚽🎾🐒🏀'];
-//💣🧤🎩🌮🎱🌶🍕🦖//
+const emojiList = [...'👻💩👾👽🤖💀🤡👺'];
 
+
+
+//-----------Representa la funcionalidad del Juego--------------------//
 const Function = () => {
   const [shuffledMemoBlocks, setShuffledMemoBlocks] = useState([]);
   const [selectedMemoBlock, setselectedMemoBlock] = useState(null);
@@ -16,6 +18,7 @@ const Function = () => {
     setShuffledMemoBlocks(shuffledEmojiList.map((emoji, i) => ({ index: i, emoji, flipped: false })));
   }, []);
 
+  // Con suffleArray mezcla los bloques en posiciones alentoria.
   const shuffleArray = a => {
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -58,7 +61,7 @@ const Function = () => {
   return (
     <>
       <Board memoBlocks={shuffledMemoBlocks} animating={animating} handleMemoClick={handleMemoClick} />
-      <h1 style={{ textAlign: "center", color: "red", paddingTop: 0 }}>{result}</h1>
+      <h1 style={{ textAlign: "center", color: "white" }}>{result}</h1>
     </>
 
   );

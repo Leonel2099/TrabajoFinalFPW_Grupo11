@@ -24,6 +24,7 @@ export default class Preload extends Phaser.Scene {
         this.load.image('ganaste', 'assets/assetsPhaser/winScreen.jpg');
         this.load.spritesheet('retry', 'assets/assetsPhaser/botonRetry.png', { frameWidth: 279, frameHeight: 278});//indica el tamaño del frame que se mostrará
         this.load.spritesheet('play', 'assets/assetsPhaser/botonPlay.png', { frameWidth: 698, frameHeight: 610});//indica el tamaño del frame que se mostrará
+        this.load.spritesheet('inicioBoton', 'assets/assetsPhaser/botonInicio.png', { frameWidth: 279, frameHeight: 278});//indica el tamaño del frame que se mostrará
     }
 
     create() {

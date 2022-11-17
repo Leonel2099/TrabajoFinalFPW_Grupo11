@@ -1,9 +1,9 @@
-export class RetryBoton {
+export class InicioBoton {
     constructor(scene) {
         this.sceneR = scene
     }
     crear() {
-        this.button = this.sceneR.add.image(320, 341, 'retry').setInteractive().setScale(0.5,0.5);
+        this.button = this.sceneR.add.image(320, 580, 'inicioBoton').setInteractive().setScale(0.3,0.3);
 
         this.button.on('pointerover', () => {
             this.button.setFrame(1);

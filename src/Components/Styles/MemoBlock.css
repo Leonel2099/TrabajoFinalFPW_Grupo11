@@ -26,7 +26,7 @@
 }
 
 .memo-block-back {
-    background-color: #f0edb7;
+    background-color: 	#ea008cb5;
     transform: rotateY(180deg);
     box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 50%);
     display: flex;
@@ -35,6 +35,7 @@
     font-size: 55px;
 }
 
-.memo-block-front {
-    background-color: #3b75f2;
+
+.memo-block-front { 
+    background-color: 	#091833;
 }
