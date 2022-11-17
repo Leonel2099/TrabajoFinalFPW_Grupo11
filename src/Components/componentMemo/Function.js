@@ -39,7 +39,8 @@ const Function = () => {
       setCount(count + 1);
       console.log(count);
       if (count === 7) {
-        setResult("GANASTE");
+        //setResult("GANASTE");
+        alert('GANASTE, reinicia la pagina para volver a jugar 🥺');
       }
     } else {
       setAnimating(true);
@@ -53,7 +54,8 @@ const Function = () => {
       setCount2(count2 + 1);
       console.log(count2);
       if (count2 === 14) {
-        setResult("PERDISTE");
+        //setResult("PERDISTE");
+        alert('PERDISTE 💩');
       }
     }
   }

@@ -11,7 +11,7 @@ export default function GamesList() {
     };
     return (
         <div>
-            <h1 className='tituloP'>Juegos echo por el Grupo11</h1>
+            <h1 className='tituloP'>Juegos hechos por el Grupo11</h1>
             <Carousel activeIndex={index} onSelect={handleSelect} className="carousel">
                 <Carousel.Item className='container'>
                     <img
@@ -19,7 +19,7 @@ export default function GamesList() {
                         alt="First slide"
                     />
                 <Carousel.Caption>
-                        <p>Puede encontra el repositorio de estos juegos en Games, puede clonarlos para velor como la imagen o puede jugarlos aqui mismo</p>
+                        <p>Puede encontrar el repositorio de estos juegos en Games, puede clonarlos para verlos como la imagen o puede jugarlos aqui mismo</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className='container'>
@@ -28,7 +28,7 @@ export default function GamesList() {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <p>Puede encontra el repositorio de estos juegos en Games, puede clonarlos para velor como la imagen o puede jugarlos aqui mismo</p>
+                        <p>Puede encontrar el repositorio de estos juegos en Games, puede clonarlos para verlos como la imagen o puede jugarlos aqui mismo</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item className='container'>
@@ -37,7 +37,7 @@ export default function GamesList() {
                         alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <p>EPuede encontra el repositorio de estos juegos en Games, puede clonarlos para velor como la imagen o puede jugarlos aqui mismo</p>
+                        <p>Puede encontrar el repositorio de estos juegos en Games, puede clonarlos para verlos como la imagen o puede jugarlos aqui mismo</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
