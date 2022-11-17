@@ -344,7 +344,11 @@ export default class Nivel extends Phaser.Scene {
         }
         else if (this.lifePlayer == 0) {
             this.lifeText.setText(' ');
-            // this.scene.start('GameOver')
+            this.scene.start('derrota')
+            this.lifePlayer= 3;
+            this.lifeText.setText('🐸🐸🐸');
+            this.score= 0;
+            this.scoreText.setText('Score: '+this.score);
         }
     }
 

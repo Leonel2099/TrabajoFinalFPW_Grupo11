@@ -6,7 +6,7 @@ export default function CardsGames(g) {
     return (
         <Card className='cardGames' bg='dark' text='light'style={{ width: '17rem'}}>
             <Card.Body key='light'>
-                <Card.Img variant="top" src={g.img}/>
+                <Card.Img variant="top" src={require(`../Assets/img/${g.img}`)}/>
                 <Card.Title >{g.titulo}</Card.Title>
                 <Card.Text >
                     {g.descripcion}
