@@ -24,14 +24,14 @@
         "img":"Memo.png",
         "titulo":"Memory Test",
         "descripcion":"Cuarto juego creado con React,JavaScript,HTML,CSS y Bootstrap",
-        "linkG":"#",
+        "linkG":"https://github.com/Leonel2099/TrabajoFinalFPW_Grupo11",
         "linkP":"/Memo"
     },
     {
         "img":"Frogger.jpg",
         "titulo":"Frogger",
         "descripcion":"Quinto juego Phaser,JavaScript, React y un poco de CSS",
-        "linkG":"#",
+        "linkG":"https://github.com/Leonel2099/TrabajoFinalFPW_Grupo11",
         "linkP":"/Frogger"
     },
     {

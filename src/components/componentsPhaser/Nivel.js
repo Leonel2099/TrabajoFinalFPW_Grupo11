@@ -333,6 +333,10 @@ export default class Nivel extends Phaser.Scene {
         if (this.score === 400) {
             this.physics.pause();
             this.scene.start('ganaste')
+            this.lifePlayer= 3;
+            this.lifeText.setText('🐸🐸🐸');
+            this.score= 0;
+            this.scoreText.setText('Score: '+this.score);
         }
     }
     gameOver() {
